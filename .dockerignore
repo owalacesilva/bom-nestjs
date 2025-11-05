@@ -1,0 +1,14 @@
+# Ignore Dockerfile and docker-compose files
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.*.yml
+
+# Ignore environment files
+.env.example
+.gitignore
+
+# Ignore node modules and build directories
+dist/
+build/
+.out/
