@@ -1,6 +1,14 @@
-import {IEntity} from "../interfaces/entity.interface";
-
-export abstract class Domain implements IEntity
+export abstract class Domain<T>
 {
-    constructor(public id: string) {}
+    constructor(public id: T) {}
+
+    public getId(): T
+    {
+        return this.id;
+    }
+
+    public setId(id: T)
+    {
+        this.id = id;
+    }
 }
