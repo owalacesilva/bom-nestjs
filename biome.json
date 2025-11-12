@@ -1,12 +1,86 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
   "formatter": {
-    "enabled": false
+    "enabled": true,
+    "indentStyle": "space",
+    "formatWithErrors": true,
+    "indentSize": 2,
+    "lineWidth": 100,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "semi": true,
+    "trailingComma": "es5",
+    "quoteProps": "as-needed",
+    "insertFinalNewline": true,
+    "proseWrap": "preserve",
+    "endOfLine": "lf"
   },
   "linter": {
-    "enabled": false
+    "enabled": true,
+    "ignores": [
+      "dist/**",
+      "build/**",
+      "node_modules/**",
+      "coverage/**"
+    ],
+    "rules": {
+      "eqeqeq": "error",
+      "curly": "error",
+      "no-console": "warn",
+      "no-debugger": "error",
+      "no-unused-vars": [
+        "warn",
+        {
+          "varsIgnorePattern": "^_",
+          "args": "none"
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "varsIgnorePattern": "^_",
+          "args": "none"
+        }
+      ],
+      "sort-imports": [
+        "error",
+        {
+          "ignoreCase": true,
+          "ignoreDeclarationSort": false,
+          "ignoreMemberSort": false,
+          "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        }
+      ]
+    }
   },
   "assist": {
-    "enabled": false
+    "enabled": true
+  },
+  "files": {
+    "include": [
+      "src/**/*",
+      "test/**/*",
+      "**/*.{js,ts,jsx,tsx,json,md}"
+    ],
+    "exclude": [
+      "dist",
+      "build",
+      "node_modules",
+      "coverage"
+    ]
+  },
+  "importResolver": {
+    "node": {
+      "extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".json"
+      ],
+      "moduleDirectory": [
+        "node_modules",
+        "src"
+      ]
+    }
   }
 }
