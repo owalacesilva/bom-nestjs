@@ -4,6 +4,7 @@
 /build
 /tmp
 /.idea
+/nest
 
 # Logs
 logs

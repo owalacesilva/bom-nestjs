@@ -15,6 +15,11 @@ ENV SHELL=/bin/bash
 
 # Install nvm and Node.js
 ENV NVM_DIR=/home/operator/.nvm
+
+# Switch to operator user
+USER operator
+
+# Install nvm and Node.js
 RUN mkdir -p $NVM_DIR && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh | bash && \
     bash -lc ". \"$NVM_DIR/nvm.sh\" && nvm install ${NODE_VERSION} && nvm alias default ${NODE_VERSION}"
@@ -25,19 +30,13 @@ WORKDIR /app
 # Copy project files
 COPY . .
 
-# Set permissions for operator
-RUN chown -R operator:operator /app
-
-# Switch to operator user
-USER operator
-
 # Add nvm to PATH
 ENV PATH="/home/operator/.nvm/versions/node/v${NODE_VERSION}/bin:${PATH}"
 
 # Expose port
 EXPOSE 3000
 
-ENTRYPOINT [".docker/entrypoint.sh"]
+#ENTRYPOINT ["entrypoint.sh"]
 
 # Start the application
 CMD ["/bin/bash"]

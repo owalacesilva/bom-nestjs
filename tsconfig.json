@@ -12,15 +12,12 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "declaration": true,
-      "paths": {
-        "@app/*": ["src/app/*"],
-        "@domain/*": ["src/domain/*"],
-        "@infra/*": ["src/infrastructure/*"],
-        "@interfaces/*": ["src/interfaces/*"],
-        }
-
-  }
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@domain/*": ["src/domain/*"],
+      "@infra/*": ["src/infrastructure/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+  "include": ["src/**/*"]
 }
