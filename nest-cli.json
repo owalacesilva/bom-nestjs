@@ -6,6 +6,6 @@
   "language": "ts",
   "compilerOptions": {
     "deleteOutDir": true,
-    "tsConfigPath": "tsconfig.build.json"
+    "tsConfigPath": "tsconfig.json"
   }
 }
