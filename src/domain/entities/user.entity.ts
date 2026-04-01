@@ -8,8 +8,7 @@ export interface IUser
     passwordHash: string;
 }
 
-export class UserEntity extends Domain<string> implements IUser
-{
+export class UserEntity extends Domain<string> implements IUser  {
     firstName: string;
     lastName: string;
     email: string;
@@ -17,6 +16,6 @@ export class UserEntity extends Domain<string> implements IUser
 
     constructor(id: string)
     {
-        super(id);
+        super(id)
     }
 }

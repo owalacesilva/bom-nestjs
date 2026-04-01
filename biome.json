@@ -2,25 +2,23 @@
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "formatWithErrors": true,
-    "indentSize": 2,
+    "formatWithErrors": false,
     "lineWidth": 100,
-    "singleQuote": true,
-    "jsxSingleQuote": false,
-    "semi": true,
-    "trailingComma": "es5",
-    "quoteProps": "as-needed",
-    "insertFinalNewline": true,
-    "proseWrap": "preserve",
-    "endOfLine": "lf"
+    "expand": null
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "lineWidth": 100,
+      "lineEnding": "lf"
+    }
   },
   "linter": {
     "enabled": true,
-    "ignores": [
-      "dist/**",
-      "build/**",
-      "node_modules/**",
-      "coverage/**"
+    "includes": [
+      "src/**/*.ts",
+      "test/**/*.ts",
+      "!**/*.min.js"
     ],
     "rules": {
       "eqeqeq": "error",
@@ -47,7 +45,12 @@
           "ignoreCase": true,
           "ignoreDeclarationSort": false,
           "ignoreMemberSort": false,
-          "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+          "memberSyntaxSortOrder": [
+            "none",
+            "all",
+            "multiple",
+            "single"
+          ]
         }
       ]
     }
@@ -56,16 +59,10 @@
     "enabled": true
   },
   "files": {
-    "include": [
-      "src/**/*",
-      "test/**/*",
-      "**/*.{js,ts,jsx,tsx,json,md}"
-    ],
-    "exclude": [
-      "dist",
-      "build",
-      "node_modules",
-      "coverage"
+    "includes": [
+      "src/**/*.ts",
+      "test/**/*.ts",
+      "!**/*.min.js"
     ]
   },
   "importResolver": {
